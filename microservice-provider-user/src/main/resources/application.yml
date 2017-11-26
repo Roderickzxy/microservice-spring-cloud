@@ -21,8 +21,10 @@ logging:
     com.rode: DEBUG
 eureka:
   client:
+    healthcheck:
+      enable: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://user:password123@localhost:8761/eureka
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
